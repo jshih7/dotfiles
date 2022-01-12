@@ -11,7 +11,7 @@ tmuxn() { # new session
     tmux new -s $1
 }
 tmuxa() { # attach to session
-    tmux a -t $2
+    tmux a -t $1
 }
 tmuxk() { # kill session
     tmux kill-session -t $1
