@@ -39,5 +39,6 @@ oh-my-zh: FORCE
 zsh: FORCE oh-my-zh
 	rm -f ~/.zshrc
 	ln -s ${PWD}/zsh/.zshrc ~/.zshrc
+	source ~/.zshrc
 
 FORCE:

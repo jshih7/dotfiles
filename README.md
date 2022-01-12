@@ -12,9 +12,9 @@ Configuration files for workstation, inspired by https://github.com/eemp/dotfile
 # Quick Start
 
 ```
+chsh -s zsh
 cd ~
 git clone https://github.com/jshih7/dotfiles.git
 cd dotfiles
 make all
-chsh -s zsh
 ```
