@@ -1,4 +1,4 @@
-all: bash git tmux vim zsh
+all: git tmux vim zsh
 
 bash: FORCE
 	rm -f ~/.bashrc
@@ -33,7 +33,5 @@ zsh: FORCE
 	ln -s ${PWD}/zsh/.zshrc ~/.zshrc
 	# oh-my-zsh
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-
 
 FORCE:
