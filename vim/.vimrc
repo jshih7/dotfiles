@@ -66,17 +66,24 @@ call plug#end()
 " For git-gutter
 "set updatetime=100
 
-" For ctrl-p performance
-" https://stackoverflow.com/questions/21346068/slow-performance-on-ctrlp-it-doesnt-work-to-ignore-some-folders
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-let g:ctrlp_clear_cache_on_exit = 0
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-
 " temporary workaround for missing first letter
 " https://github.com/scrooloose/nerdtree/issues/916
 let NERDTreeNodeDelimiter = "\t"
+
+""""""""""""""""""""
+" > CTRL-P PERFORMANCE
+""""""""""""""""""""
+" https://stackoverflow.com/questions/21346068/slow-performance-on-ctrlp-it-doesnt-work-to-ignore-some-folders
+" Cache
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+let g:ctrlp_clear_cache_on_exit = 0
+"if executable('ag')
+"  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+"endif
+
+" Ignoring certain paths: https://github.com/kien/ctrlp.vim/issues/58
+" Using .ctrlpignore to ignore certain files: thttps://superuser.com/questions/649714/can-i-get-the-vim-ctrlp-plugin-to-ignore-a-specific-folder-in-one-project/900794#900794
+let g:ctrlp_user_command = 'find %s -type f | grep -v "`cat .ctrlpignore`"'
 
 """"""""""""""""""
 " > GENERAL

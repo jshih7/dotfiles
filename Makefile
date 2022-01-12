@@ -18,7 +18,9 @@ vim: vimrc vim-plugins
 
 vimrc: FORCE
 	rm -f ~/.vimrc
+	rm -f ~/.ctrlpignore
 	ln -s ${PWD}/vim/.vimrc ~/.vimrc
+	ln -s ${PWD}/vim/.ctrlpignore ~/.ctrlpignore
 
 vim-plugin-manager: FORCE
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
