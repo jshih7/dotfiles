@@ -1,4 +1,4 @@
-all: bash git tmux vim
+all: bash git tmux vim zsh
 
 bash: FORCE
 	rm -f ~/.bashrc
@@ -27,5 +27,13 @@ vim-plugins: FORCE .vim/autoload/plug.vim
 	rm -rf ~/.vim/plugged
 	mkdir -p ~/.vim/autoload ~/.vim/plugged
 	vim +'PlugInstall --sync' +qa
+
+zsh: FORCE
+	rm -f ~/.zshrc
+	ln -s ${PWD}/zsh/.zshrc ~/.zshrc
+	# oh-my-zsh
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
 
 FORCE:
