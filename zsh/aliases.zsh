@@ -1,19 +1,3 @@
-# .bashrc
-
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
-
-# Make vim the default editor
-#export VISUAL=vim
-#export EDITOR="$VISUAL"
-
-# User specific aliases and functions
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # Unalias everything so we don't have zombie alias
 unalias -a
 

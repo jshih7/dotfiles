@@ -99,3 +99,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# taken from Mihir
+# break zsh config into separate scripts
+# entrypoint is main
+export DOTFILES=$HOME/dotfiles
+source $DOTFILES/zsh/main.zsh
