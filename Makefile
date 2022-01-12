@@ -20,10 +20,10 @@ vimrc: FORCE
 	rm -f ~/.vimrc
 	ln -s ${PWD}/vim/.vimrc ~/.vimrc
 
-.vim/autoload/plug.vim:
+vim-plugin-manager: FORCE
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-vim-plugins: FORCE .vim/autoload/plug.vim
+vim-plugins: FORCE vim-plugin-manager
 	rm -rf ~/.vim/plugged
 	mkdir -p ~/.vim/autoload ~/.vim/plugged
 	vim +'PlugInstall --sync' +qa
