@@ -28,7 +28,7 @@ vim-plugin-manager: FORCE
 vim-plugins: FORCE vim-plugin-manager
 	rm -rf ~/.vim/plugged
 	mkdir -p ~/.vim/autoload ~/.vim/plugged
-	vim +'PlugInstall --sync' +qa
+	-vim -E -s -u ~/.vimrc +PlugInstall +qall
 
 oh-my-zh: FORCE
 	@# oh-my-zsh needs to be installed first, because it will create its own .zshrc
