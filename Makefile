@@ -30,10 +30,14 @@ vim-plugins: FORCE vim-plugin-manager
 	mkdir -p ~/.vim/autoload ~/.vim/plugged
 	vim +'PlugInstall --sync' +qa
 
-zsh: FORCE
+oh-my-zh: FORCE
+	@# oh-my-zsh needs to be installed first, because it will create its own .zshrc
+	@# this will also stop the other make targets from running, probably because the shell was updated
+	@# To address: https://github.com/ohmyzsh/ohmyzsh#unattended-install
+	-sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+zsh: FORCE oh-my-zh
 	rm -f ~/.zshrc
 	ln -s ${PWD}/zsh/.zshrc ~/.zshrc
-	@# oh-my-zsh
-	sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 FORCE:
