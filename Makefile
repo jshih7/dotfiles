@@ -11,7 +11,7 @@ git: FORCE
 	ln -s ${PWD}/git/.gitconfig ~/.gitconfig
 
 tmux: FORCE
-	rm -rf ~/.tmux.conf
+	rm -f ~/.tmux.conf
 	ln -s ${PWD}/tmux/.tmux.conf ~/.tmux.conf
 
 vim: vimrc vim-plugins
