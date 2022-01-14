@@ -19,6 +19,7 @@ tmux-conf: FORCE
 tmux-plugins: FORCE
 	mkdir -p ~/.tmux/plugins
 	-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	tmux source-file ~/.tmux.conf
 	~/.tmux/plugins/tpm/bin/install_plugins
 	tmux source-file ~/.tmux.conf
 
