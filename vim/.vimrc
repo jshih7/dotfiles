@@ -111,6 +111,12 @@ set background=dark
 colorscheme PaperColor
 "colorscheme elflord
 
+" Temporary fix for slow navigation in TS files
+" TODO: figure out which config / plugin is causing the slowdown
+" https://jameschambers.co.uk/vim-typescript-slow
+" https://stackoverflow.com/questions/16902317/vim-slow-with-ruby-syntax-highlighting
+set re=0
+
 " Syntax coloring
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 au BufRead,BufNewFile *.ipy set filetype=python
