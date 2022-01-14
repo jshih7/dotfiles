@@ -10,9 +10,16 @@ git: FORCE
 	rm -f ~/.gitconfig
 	ln -s ${PWD}/git/.gitconfig ~/.gitconfig
 
-tmux: FORCE
-	rm -rf ~/.tmux.conf
+tmux: tmux-conf tmux-resurrect
+
+tmux-conf: FORCE
+	rm -f ~/.tmux.conf
 	ln -s ${PWD}/tmux/.tmux.conf ~/.tmux.conf
+
+tmux-resurrect: FORCE
+	mkdir -p ~/.tmux
+	-git clone https://github.com/tmux-plugins/tmux-resurrect ~/.tmux/tmux-resurrect
+	tmux source-file ~/.tmux.conf
 
 vim: vimrc vim-plugins
 
