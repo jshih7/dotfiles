@@ -4,6 +4,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Prevent Ctrl-D from exiting shell, which subsequently, closes a tmux window/pane
+# https://superuser.com/questions/479600/how-can-i-prevent-tmux-exiting-with-ctrl-d#:~:text=3%20Answers&text=To%20be%20precise%2C%20Ctrl%20d,and%20the%20tmux%20client%20exits.
+setopt ignoreeof
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
