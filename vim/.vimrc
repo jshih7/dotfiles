@@ -73,9 +73,12 @@ call plug#end()
 " https://github.com/scrooloose/nerdtree/issues/916
 let NERDTreeNodeDelimiter = "\t"
 
-" Use Ctrl-p to search using fzf
+" Use Ctrl-p to search files using fzf
 " https://www.youtube.com/watch?v=DpURGnb4Fyk
 nnoremap <C-p> :Files<Cr>
+
+" Use Ctrl-p to search vim buffer using fzf
+nnoremap <C-b> :Buffer<Cr>
 
 """"""""""""""""""""
 " > CTRL-P PERFORMANCE
