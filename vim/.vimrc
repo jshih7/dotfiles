@@ -28,7 +28,7 @@ let g:PaperColor_Dark_Override = { 'comment' : '#5f875f' }
 "Plug 'airblade/vim-gitgutter'
 "Plug 'ajh17/VimCompletesMe'
 Plug 'bling/vim-bufferline'
-Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'mxw/vim-jsx'
@@ -44,6 +44,9 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 
 Plug 'diepm/vim-rest-console'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Snippets are separated from the engine. Add this if you want them:
 "Plug 'SirVer/ultisnips'
@@ -69,6 +72,10 @@ call plug#end()
 " temporary workaround for missing first letter
 " https://github.com/scrooloose/nerdtree/issues/916
 let NERDTreeNodeDelimiter = "\t"
+
+" Use Ctrl-p to search using fzf
+" https://www.youtube.com/watch?v=DpURGnb4Fyk
+nnoremap <C-p> :Files<Cr>
 
 """"""""""""""""""""
 " > CTRL-P PERFORMANCE
