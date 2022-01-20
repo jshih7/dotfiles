@@ -35,7 +35,7 @@ Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdcommenter'
 Plug 'elzr/vim-json'
-"Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
@@ -79,6 +79,9 @@ nnoremap <C-p> :Files<Cr>
 
 " Use Ctrl-p to search vim buffer using fzf
 nnoremap <C-b> :Buffer<Cr>
+
+" Use Ctrl-l to open NERD Tree
+nnoremap <C-l> :NERDTree<Cr>
 
 """"""""""""""""""""
 " > CTRL-P PERFORMANCE
