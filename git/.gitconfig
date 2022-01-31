@@ -23,3 +23,5 @@
     pull = pull --ff-only
 [core]
     editor = /usr/bin/vim
+[pager]
+    branch = false
