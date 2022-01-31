@@ -84,6 +84,14 @@ nnoremap <C-b> :Buffer<Cr>
 nnoremap <C-l> :NERDTree<Cr>
 
 """"""""""""""""""""
+" > ALIASES
+""""""""""""""""""""
+
+" Prettify JSON
+" https://stackoverflow.com/questions/3878692/how-to-create-an-alias-for-a-command-in-vim/3878710#3878710
+command Json %!python -m json.tool
+
+""""""""""""""""""""
 " > CTRL-P PERFORMANCE
 """"""""""""""""""""
 " https://stackoverflow.com/questions/21346068/slow-performance-on-ctrlp-it-doesnt-work-to-ignore-some-folders
