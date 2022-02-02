@@ -4,6 +4,12 @@ unalias -a
 # Common Aliases
 alias ll='ls -alh' # list all in list form, with human readable suffixes
 
+# pm2
+alias pm2l='pm2 list --sort id'
+alias pm2r='pm2 restart'
+alias pm2s='pm2 stop'
+alias pm2d='pm2 delete'
+
 # tmux aliases
 # in order to alias commands withs parameters, make a function
 alias tmuxl="tmux ls" # list sessions
