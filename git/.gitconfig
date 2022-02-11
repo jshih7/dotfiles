@@ -34,7 +34,10 @@
     com = commit -m
     coma = commit --amend
     comr = commit --amend --reset-author
-    comra = commit --amend --reset-author --date="$(git log -n 1 --format=%aD)"
+    comra = "!f() { \
+            COMMIT_DATE="$(git log -n 1 --format=%aD)"; \
+            GIT_COMMITTER_DATE=$COMMIT_DATE git commit --amend --reset-author --date=\"$COMMIT_DATE\"; \
+        }; f"
     reb = rebase -i
     rebn = "!f() { \
             git rebase -i HEAD~$1; \
