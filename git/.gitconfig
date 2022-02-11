@@ -17,11 +17,28 @@
     changed = green
     untracked = cyan
 [alias]
+    ls = log --oneline
+    ll = ls
+    st = status
+    br = branch
+    brr = branch --remote
+    brm = branch -m
     co = checkout
+    cob = checkout -b
     cp = cherry-pick
     df = diff -w --color-words --color-moved
+    dfc = diff --cached -w --color-words --color-moved
+    dfs = dfc
     pull = pull --ff-only
+    com = commit -m
+    coma = commit --amend
+    comr = commit --amend --reset-author
+    reb = "!f() { \
+            git rebase -i HEAD~$1; \
+        }; f"
+    ref = reflog
 [core]
     editor = /usr/bin/vim
 [pager]
     branch = false
+    tag = false
