@@ -51,3 +51,5 @@
 [pager]
     branch = false
     tag = false
+[includeIf "gitdir:~/haventech_dev/**"]
+    path = ~/dotfiles/git/haventech/.gitconfig
