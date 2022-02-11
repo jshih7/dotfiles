@@ -33,6 +33,7 @@
     com = commit -m
     coma = commit --amend
     comr = commit --amend --reset-author
+    comra = commit --amend --reset-author --date="$(git log -n 1 --format=%aD)"
     reb = "!f() { \
             git rebase -i HEAD~$1; \
         }; f"
