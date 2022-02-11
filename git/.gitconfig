@@ -26,6 +26,7 @@
     co = checkout
     cob = checkout -b
     cp = cherry-pick
+    cpa = cp --abort
     df = diff -w --color-words --color-moved
     dfc = diff --cached -w --color-words --color-moved
     dfs = dfc
@@ -38,6 +39,8 @@
     rebn = "!f() { \
             git rebase -i HEAD~$1; \
         }; f"
+    rebc = rebase --continue
+    reba = rebase --abort
     ref = reflog
 [core]
     editor = /usr/bin/vim
