@@ -18,7 +18,8 @@
     untracked = cyan
 [alias]
     ls = log --oneline
-    ll = ls
+    ll = log --pretty=fuller
+    logp = log -p
     st = status
     br = branch
     brr = branch --remote
