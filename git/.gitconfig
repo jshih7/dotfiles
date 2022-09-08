@@ -46,6 +46,13 @@
     rebc = rebase --continue
     reba = rebase --abort
     ref = reflog
+    stashl = stash list
+    stashp = "!f() { \
+            git stash push -m "stash_name_$1"; \
+        }; f"
+    stasha = "!f() { \
+            git stash apply $(git stash list | grep "stash_name_$1" | cut -d: -f1); \
+        }; f"
 [core]
     editor = /usr/bin/vim
 [pager]
