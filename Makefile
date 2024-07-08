@@ -1,11 +1,5 @@
 all: git tmux vim zsh
 
-bash: FORCE
-	rm -f ~/.bashrc
-	rm -f ~/.bash_profile
-	ln -s ${PWD}/bash/.bashrc ~/.bashrc
-	ln -s ${PWD}/bash/.bash_profile ~/.bash_profile
-
 git: FORCE
 	rm -f ~/.gitconfig
 	ln -s ${PWD}/git/.gitconfig ~/.gitconfig
@@ -46,6 +40,8 @@ oh-my-zh: FORCE
 	-sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 zsh: FORCE oh-my-zh
+	rm -f ~/.bashrc
+	rm -f ~/.bash_profile
 	rm -f ~/.zshrc
 	ln -s ${PWD}/zsh/.zshrc ~/.zshrc
 	zsh
