@@ -28,13 +28,25 @@
     cob = checkout -b
     cp = cherry-pick
     cpa = cp --abort
+    cpc = cp --continue
+    cpm = "!f() { \
+        FROM="$1"; \
+        TO="$2"; \
+        TO="${TO:-master}"; \
+        echo "FROM: $FROM, TO: $TO"; \
+        git checkout $TO; \
+        git branch -m "$FROM" "$FROM--bak"; \
+        git checkout -b "$FROM"; \
+        git cherry-pick "$FROM".."$FROM--bak"; \
+    }; f"
     df = diff -w --color-words --color-moved
     dfc = diff --cached -w --color-words --color-moved
     dfs = dfc
     pull = pull --ff-only
     com = commit -m
     coma = commit --amend
-    comr = commit --amend --reset-author
+    comanv = commit --amend --no-verify
+    comr = commit --amend --reset-author --no-verify
     comra = "!f() { \
             COMMIT_DATE="$(git log -n 1 --format=%aD)"; \
             GIT_COMMITTER_DATE=$COMMIT_DATE git commit --amend --reset-author --date=\"$COMMIT_DATE\"; \
