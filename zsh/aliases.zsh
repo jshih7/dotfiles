@@ -23,6 +23,13 @@ tmuxk() { # kill session
     tmux kill-session -t $1
 }
 
+# docker aliases
+alias dps='docker ps -a'
+drm() { # stop and remove by container name
+    docker kill $(docker ps -a -q --filter="name=$1")
+    docker rm $(docker ps -a -q --filter="name=$1")
+}
+
 # cannot do "watch jobs", so I made an alias
 watchjobs() {
     while true; do
